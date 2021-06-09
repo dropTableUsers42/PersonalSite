@@ -29,7 +29,7 @@
 	min-height: 10rem;
 
 	transform: scale(1);
-	animation: transform 300ms ease;
+	transition: transform 300ms ease;
 
 	border-radius: 8px;
 
@@ -41,17 +41,19 @@
 	padding: 0.5ch;
 }
 
-a.grid-item:hover, a.grid-item:visited, a.grid-item:link, a.grid-item:active {
+a.grid-item:link, a.grid-item:visited, a.grid-item:hover, a.grid-item:active {
 	text-decoration: none;
 	color: var(--clr-fg-800);
 }
 
-.grid-item:hover {
-	transform: scale(1.1);
-
-	background-color: var(--clr-bg-600);
-
-	cursor: pointer;
+@media (hover) {
+	.grid-item:hover, .grid-item:focus {
+		transform: scale(1.1);
+	
+		background-color: var(--clr-bg-600);
+	
+		cursor: pointer;
+	}
 }
 
 .grid {

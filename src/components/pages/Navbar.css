@@ -1,5 +1,5 @@
 .navbar {
-	background-color: var(--clr-bg-600);
+	background-color: var(--clr-bg-600-trans);
 	border-bottom: 1px solid var(--clr-bg-800);
 
 	height: var(--header-height);
@@ -32,7 +32,11 @@
 	transform: translateY(-50%);
 }
 
-.navbar-container :is(a:link, a:visited, a:hover, a:active) {
+.navbar-container a {
+	text-decoration: underline;
+}
+
+.navbar-container a:link, .navbar-container a:visited, .navbar-container a:hover, .navbar-container a:active {
 	text-decoration: none;
 
 	color: var(--clr-fg-800);
@@ -42,14 +46,48 @@
 	width: max-content;
 }
 
+
 #logo-first::before {
 	content: "R";
-	color: var(--clr-fg-800);
+	color: rgba(var(--clr-fg-800-r), var(--clr-fg-800-g), var(--clr-fg-800-b), 1);
 }
 
 #logo-second::before {
 	content: "G";
-	color: var(--clr-fg-800);
+	color: rgba(var(--clr-fg-800-r), var(--clr-fg-800-g), var(--clr-fg-800-b), 1);
+}
+
+@media only screen and (max-width: 700px) {
+
+	.navbar {
+		transform: scaleY(1);
+	}
+
+	.navbar, .navbar .container, #logo-first, #logo-second {
+		transition: 200ms ease;
+	}
+
+	.navbar.scrolled {
+		transform: scaleY(calc(58/98));
+	}
+
+	.navbar .container {
+		transform: scaleY(1);
+	}
+
+	.navbar.scrolled .container {
+		transform: scaleY(calc(98/58));
+	}
+	
+	.navbar.scrolled #logo-first {
+		color: rgba(var(--clr-fg-800-r), var(--clr-fg-800-g), var(--clr-fg-800-b), 0);
+	}
+	
+	.navbar.scrolled #logo-second {
+		color: rgba(var(--clr-fg-800-r), var(--clr-fg-800-g), var(--clr-fg-800-b), 0);
+	
+		transform: translate(1.1ch, calc(0px - var(--font-size)));
+	}
 }
 
 @media only screen and (min-width: 700px) {

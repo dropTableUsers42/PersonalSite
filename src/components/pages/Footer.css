@@ -1,5 +1,5 @@
 .footer {
-	background-color: var(--clr-bg-600);
+	background-color: var(--clr-bg-600-trans);
 	border-top: 1px solid var(--clr-bg-800);
 
 	height: var(--footer-height);
