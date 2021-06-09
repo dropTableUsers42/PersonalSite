@@ -1,0 +1,69 @@
+.navbar {
+	background-color: var(--clr-bg-600);
+	border-bottom: 1px solid var(--clr-bg-800);
+
+	height: var(--header-height);
+
+	position: fixed;
+
+	transform-origin: top;
+
+	z-index: 1;
+}
+
+.navbar .container {
+	position: relative;
+
+	height: var(--header-height);
+
+	transform-origin: top;
+}
+
+.navbar-container {
+	--font-size: 40px;
+
+	font-size: var(--font-size);
+
+	line-height: calc(var(--font-size));
+
+	position: absolute;
+	top: 50%;
+
+	transform: translateY(-50%);
+}
+
+.navbar-container :is(a:link, a:visited, a:hover, a:active) {
+	text-decoration: none;
+
+	color: var(--clr-fg-800);
+}
+
+.logo-split, .logo-split p {
+	width: max-content;
+}
+
+#logo-first::before {
+	content: "R";
+	color: var(--clr-fg-800);
+}
+
+#logo-second::before {
+	content: "G";
+	color: var(--clr-fg-800);
+}
+
+@media only screen and (min-width: 700px) {
+	.logo-split {
+		display: flex;
+
+		flex-direction: row;
+	}
+
+	.navbar-container {
+		--font-size: 48px;
+	}
+
+	.logo-split :is(p + p) {
+		margin-left: calc(var(--font-size)/3);
+	}
+}

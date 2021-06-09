@@ -1,0 +1,151 @@
+.split {
+	display: flex;
+	flex-direction: column;
+
+}
+
+.split .card {
+
+	background-image: url(../../assets/home.jpg);
+	background-size: cover;
+
+	height: 11.5rem;
+	width: 10rem;
+
+	border-radius: 8px;
+
+	position: relative;
+}
+
+.card-content {
+	position: absolute;
+
+	bottom: 0;
+
+	padding: 2ch 0 2ch 3ch;
+}
+
+.grid-item {
+	min-height: 10rem;
+
+	transform: scale(1);
+	animation: transform 300ms ease;
+
+	border-radius: 8px;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	padding: 0.5ch;
+}
+
+a.grid-item:hover, a.grid-item:visited, a.grid-item:link, a.grid-item:active {
+	text-decoration: none;
+	color: var(--clr-fg-800);
+}
+
+.grid-item:hover {
+	transform: scale(1.1);
+
+	background-color: var(--clr-bg-600);
+
+	cursor: pointer;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 1.5rem;
+
+	margin: 2.5rem 0 2.5rem 0;
+}
+
+.home-button {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.home-button h2 {
+	text-align: center;
+}
+
+@media only screen and (min-width: 550px) {
+	.grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+@media only screen and (min-width: 1250px) {
+	.grid {
+		grid-template-columns: repeat(6, 1fr);
+	}
+}
+
+@media only screen and (max-width: 700px) {
+	.card {
+		display: flex;
+		align-items: center;
+
+		margin-bottom: 2.5rem;
+	}
+
+	.card-content {
+		position: relative;
+
+		padding: 0 0 0 3ch;
+
+		transform: translateX(11.5rem);
+	}
+}
+
+@media only screen and (min-width: 700px) {
+
+	.split {
+
+		margin-bottom: 2.5rem;
+
+		display: flow-root;
+	}
+
+	.card {
+		float: left;
+
+		margin: 0 3ch 0 0;
+
+		overflow: hidden;
+	}
+
+	.card+p {
+		text-align: justify;
+	}
+
+	.card-content {
+		width: 100%;
+	
+		background: linear-gradient(
+			rgba(var(--clr-bg-400-r), var(--clr-bg-400-g), var(--clr-bg-400-b), 0%),
+			rgba(var(--clr-bg-400-r), var(--clr-bg-400-g), var(--clr-bg-400-b), 25%) 10%,
+			rgba(var(--clr-bg-400-r), var(--clr-bg-400-g), var(--clr-bg-400-b), 100%)
+		);
+
+		transform: translateY(80%);
+		transition: transform 300ms ease;
+	}
+
+	.card-content > * {
+		opacity: 0;
+		transition: opacity 300ms linear;
+	}
+
+	.card:hover .card-content > * {
+		opacity: 1;
+	}
+
+	.card:hover .card-content {
+		transform: translateY(0);
+	}
+}
