@@ -1,0 +1,17 @@
+.banner {
+
+	--scroll-height: 0px;
+
+	background-image: url('../../assets/banner.jpg');
+
+	height: calc(100vw / 4 - 0.9 * var(--scroll-height));
+
+	background-size: cover;
+
+	width: 100vw;
+
+	margin-left: calc(0px - var(--padding));
+	margin-top: calc(0px);
+
+	margin-bottom: 3ch;
+}

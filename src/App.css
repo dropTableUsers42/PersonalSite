@@ -28,7 +28,7 @@
 
 	font-size: var(--font-size);
 
-	overflow-x: hidden;
+	text-align: justify;
 }
 
 .page {

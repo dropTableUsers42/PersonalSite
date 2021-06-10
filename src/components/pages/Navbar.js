@@ -35,7 +35,7 @@ function Navbar(props) {
 			<div className={`navbar ${isScrolled ? "scrolled" : ""}`}>
 				<div className="container">
 					<div className="navbar-container">
-						<Link to="/" className="navbar-logo">
+						<Link to="/" replace className="navbar-logo">
 							<div className="logo-split">
 								<p id="logo-first">
 									witaban

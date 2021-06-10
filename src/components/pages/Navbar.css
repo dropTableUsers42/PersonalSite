@@ -67,6 +67,13 @@
 		transition: 200ms ease;
 	}
 
+	.navbar.scrolled a, .navbar.scrolled .logo-split {
+		display: inline-block;
+
+		width: 2.5ch;
+		height: var(--font-size);
+	}
+
 	.navbar.scrolled {
 		transform: scaleY(calc(58/98));
 	}
