@@ -18,6 +18,8 @@
 	--clr-fg-800-b: 196;
 	--clr-fg-800: rgb(var(--clr-fg-800-r), var(--clr-fg-800-g), var(--clr-fg-800-b));
 
+	--clr-accent: #4188ca;
+
 	--header-height: 98px;
 	--footer-height: 48px;
 
