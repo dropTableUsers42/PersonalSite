@@ -1,6 +1,6 @@
+import { useScrollPosition } from '@n8tb1t/use-scroll-position';
 import React, { useState } from 'react';
 import './About.css';
-import { useScrollPosition } from '@n8tb1t/use-scroll-position';
 
 function Timeline() {
 	return (
@@ -37,6 +37,7 @@ function About() {
 		backgroundPosition: `center ${offset}px`,
 		'--scroll-height': '0px'
 	});
+
 
 	useScrollPosition(({ prevPos, currPos }) => {
 		var wScroll = -currPos.y;
